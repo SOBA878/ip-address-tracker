@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+
+	<!-- link for the location icon -->
+	<link rel="icon" type="image/svg" sizes="32x32" href="./images/icon-location.svg">
+
+	<title>IP Address Tracker</title>
+
+
+	<!-- Font Awesome Icons -->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+
+		integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+
+	<!-- Rubik Font -->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<!-- <link rel="preconnect" href=""> -->
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+	<!-- Leaflet CSS -->
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+
+		integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+
+		crossorigin="" />
+
+
+	<!-- Leaflet CDN link CSS -->
+
+	<!--script src= Load the Leaflet JavaScript library from this URL -->
+
+	<!-- integrity="sha512-..."
+This is called Subresource Integrity (SRI).
+It protects your website.
+It checks if the file from the CDN was modified or hacked.
+If the hash doesn't match → the browser refuses to load it -->
+
+	<!--  crossorigin=""
+Allows the browser to load the file from another domain-->
+	<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+
+	
+		integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+
+		crossorigin=""></script>
+
+
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+	<main>
+
+		<div class="top">
+
+		<h1 class="title">IP Address Tracker</h1>
+
+		<form action="/" autocomplete="off">
+
+		<input type="text" id="ip-input" autofocus placeholder="Search for any IP address or domain">
+
+		<button type="submit"><img src="images/icon-arrow.svg" alt="Submit Button"></button>
+
+		</form>
+
+		<div class="info" id="info">
+
+		<div class="box ip-info-box">
+
+		<span class="field-name">ip address</span>
+
+		<span class="info-field" id="ip-info"></span>
+
+		</div>
+
+		<hr>
+
+		<div class="box location-info-box">
+
+		<span class="field-name">location</span>
+
+		<span class="info-field" id="location-info"></span>
+
+		</div>
+				<hr>
+
+		<div class="box timezone-info-box">
+
+		<span class="field-name">timezone</span>
+
+		<span class="info-field" id="timezone-info"></span>
+
+		</div>
+			<hr>
+
+		<div class="box isp-info-box">
+
+			<span class="field-name">isp</span>
+
+			<span class="info-field" id="isp-info"></span>
+
+		</div>
+
+	</div>
+
+		</div>
+
+		<dialog id="modal">
+
+			<h5><i class="fas fa-exclamation-triangle"></i> The IP address  you enter is not correct</h5>
+
+			<p id="error-message"></p>
+
+			<button id="close-btn">Close</button>
+
+		</dialog>
+
+		<div id="map"></div>
+
+		</main>
+
+	<!--  -->
+
+		<script src="index.js"></script>
+
+	</body>
+
+
+	</html>
+
+
+
